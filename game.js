@@ -31,6 +31,11 @@ window.addEventListener("keydown", (e) => {
     }
 }); 
 
+// For mobile - 
+window.addEventListener("touchstart", () => {
+    jump();
+});
+
 function startGame(){
     renderPipes();
     isGameStarted = true;
