@@ -22,16 +22,19 @@ let renderPipesInterval;
 let birdMoveInterval;
 
 // Event to make bird jump -
-window.addEventListener("keydown", (e) => {
-    if(isGameStarted){
-        const key = e.key;
-        if(key === " " || key === "w" || key === "ArrowUp"){
-            birdTop -= 50;
-        }
+function jump() {
+    if (isGameStarted) {
+        birdTop -= 50;
     }
-}); 
+}
 
-// For mobile - 
+window.addEventListener("keydown", (e) => {
+    if (e.key === " " || e.key === "w" || e.key === "ArrowUp") {
+        jump();
+    }
+});
+
+// For mobiles 
 window.addEventListener("touchstart", () => {
     jump();
 });
