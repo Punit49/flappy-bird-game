@@ -1,0 +1,168 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'helvetica neue';
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+}
+
+#game{
+    width: 100%;
+    height: 100%;
+    background: url("./assets/gamebg.png");
+    background-repeat: repeat;
+    position: relative;
+    overflow: hidden;
+}
+
+#bird{
+    height: 10rem;
+    width: 10rem;
+    position: absolute;
+    top: 200px;
+    object-fit: cover;
+    /* outline: 2px solid red; */
+}
+
+.pipes{ 
+    position: absolute;
+    width: 10rem;
+}
+
+
+.hidden {
+    display: none !important;    
+}
+
+.modalOverlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(20, 30, 48, 0.55);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    backdrop-filter: blur(2px);
+}
+
+.modalBox {
+    background: #fff8e1;
+    border: 6px solid #2b2b2b;
+    border-radius: 28px;
+    padding: 2.5rem 2.5rem 2rem;
+    text-align: center;
+    box-shadow:
+        0 10px 0 #2b2b2b,
+        0 14px 24px rgba(0, 0, 0, 0.35);
+    transform: scale(0.9);
+    animation: popIn 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+    max-width: 85%;
+}
+
+@keyframes popIn {
+    to { transform: scale(1); }
+}
+
+.gameTitle {
+    font-family: 'Bangers', cursive;
+    font-size: 3.2rem;
+    letter-spacing: 2px;
+    color: #ffcc00;
+    -webkit-text-stroke: 3px #2b2b2b;
+    text-shadow:
+        4px 4px 0 #ff5e3a,
+        4px 4px 0 #2b2b2b;
+    margin-bottom: 0.5rem;
+    line-height: 1.1;
+}
+
+.gameOverTitle {
+    color: #ff5e3a;
+    -webkit-text-stroke: 3px #2b2b2b;
+    text-shadow: 4px 4px 0 #2b2b2b;
+}
+
+.modalSubtext {
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 500;
+    font-size: 1.1rem;
+    color: #2b2b2b;
+    margin-bottom: 1.5rem;
+}
+
+.modalSubtext kbd {
+    background: #2b2b2b;
+    color: #fff;
+    padding: 2px 8px;
+    border-radius: 6px;
+    font-family: 'Fredoka', sans-serif;
+    font-size: 0.95rem;
+}
+
+#finalScore {
+    font-family: 'Bangers', cursive;
+    font-size: 1.4rem;
+    color: #ff5e3a;
+}
+
+.gameBtn {
+    font-family: 'Bangers', cursive;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    color: #fff;
+    background: linear-gradient(180deg, #6fd14a, #4caf2f);
+    border: 4px solid #2b2b2b;
+    border-radius: 16px;
+    padding: 0.7rem 2.2rem;
+    cursor: pointer;
+    box-shadow: 0 6px 0 #2e7d20;
+    transition: transform 0.08s ease, box-shadow 0.08s ease;
+}
+
+.gameBtn:hover {
+    filter: brightness(1.05);
+}
+
+.gameBtn:active {
+    transform: translateY(6px);
+    box-shadow: 0 0 0 #2e7d20;
+}
+
+.scoreBox {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #fff8e1;
+    border: 4px solid #2b2b2b;
+    border-radius: 16px;
+    padding: 0.4rem 1.4rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    box-shadow:
+        0 6px 0 #2b2b2b,
+        0 8px 14px rgba(0, 0, 0, 0.25);
+    z-index: 50;
+}
+
+.scoreLabel {
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 700;
+    font-size: 0.95rem;
+    letter-spacing: 1px;
+    color: #2b2b2b;
+}
+
+.scoreValue {
+    font-family: 'Bangers', cursive;
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+    color: #ff5e3a;
+    -webkit-text-stroke: 1.5px #2b2b2b;
+    text-shadow: 2px 2px 0 #2b2b2b;
+}
